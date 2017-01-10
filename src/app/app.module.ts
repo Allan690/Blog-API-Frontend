@@ -1,13 +1,13 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import {
+  SharedModule,
   FooterComponent,
-  HeaderComponent,
-  SharedModule
+  HeaderComponent
 } from './shared';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -20,9 +20,9 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     HomeModule,
-    rootRouting,
-    SharedModule
+    rootRouting
   ],
   providers: [],
   bootstrap: [AppComponent]
